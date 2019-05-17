@@ -256,3 +256,12 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+
+/Release
+.vs
+/OBJ_5/Release
+*.vcxproj
+*.vcxproj.*
+*.sln
+
