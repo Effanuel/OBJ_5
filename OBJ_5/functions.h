@@ -60,14 +60,14 @@ void cleanString(string& line) {
 }
 
 void removeURLS(string& line) {
-	std::regex reg("((http|https):\/\/)?(www\\.)?(\\w+\\.(com|org|lt)){1}");
+	std::regex reg("((http|https):\\/\\/)?(www\\.)?(\\w+\\.(com|org|lt)){1}");
 	line = std::regex_replace(line, reg, " ");
 }
 
 
 void getURL(string line, vector<string>& URLS) {
 	try {
-		std::regex reg("((http|https):\/\/)?(www\\.)?(\\w+\\.(com|org|lt)){1}");
+		std::regex reg("((http|https):\\/\\/)?(www\\.)?(\\w+\\.(com|org|lt)){1}");
 		std::sregex_iterator next(line.begin(), line.end(), reg);
 		std::sregex_iterator end;
 		while (next != end) {
