@@ -1,0 +1,5 @@
+There's now a drop down (at least since VS 2017.3.5) where you can specifically select C++17. The available options are (under project > Properties > C/C++ > Language > C++ Language Standard)
+
+ISO C++14 Standard. msvc command line option: /std:c++14
+ISO C++17 Standard. msvc command line option: /std:c++17
+The latest draft standard. msvc command line option: /std:c++latest

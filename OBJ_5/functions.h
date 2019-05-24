@@ -1,4 +1,6 @@
 ﻿#pragma once
+#include "Console.h"
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -10,32 +12,22 @@
 #include <exception>
 #include <clocale>
 #include <regex>
+#include <locale>
 
-using std::string;
 using std::vector;
-using std::cout;
-using std::endl;
 using std::map;
-using std::cin;
 
 typedef unsigned int uint;
 typedef map<string, vector<uint>> MAPw;
 
 
 bool wordInDict(MAPw& mapOfWords, string& val);
-
 void incrementMap(MAPw& wordDict, string& word, uint& index);
-
 void removeURLS(string& line);
 void cleanString(string & line);
-vector<string> searchURLS();
-
+vector<string> searchURLS(int);
 void getURL(string, vector<string>&);
-
-MAPw readFile(char);
-
-template <typename T> T cin_and_checkFormat_in_interval(double, double);
-void Console(int&, char&);
+MAPw readFile(Console_&, int);
 
 bool wordInDict(MAPw& mapOfWords, string& val)
 {
@@ -61,16 +53,7 @@ void incrementMap(MAPw & wordDict, string & word, uint & index) {
 	}
 }
 
-void cleanString(string & line) {
-	//vector<char> symbols{ '"', '„', '“', '…', '(', ')', '\\','—','-',',', '.', '?', '!', ':', ';', '\'', '{', '}', '*', '#', '[', ']' };
-	
-	//for (auto& a : line) {
-	//	for (const auto& symbol : symbols) {
-	//		if (a == symbol)
-	//			a = ' ';
-	//	}
-	//}
-	//((http | https) : / {2}) ? (? = \4)(www.) ? (\w + .(com | org | lt)) { 1 }
+void cleanString(string& line) {
 	std::transform(line.begin(), line.end(), line.begin(), ::tolower);
 	std::regex reg("\\W");
 	line = std::regex_replace(line, reg, " ");
@@ -80,7 +63,6 @@ void removeURLS(string& line) {
 	std::regex reg("((http|https):\/\/)?(www\\.)?(\\w+\\.(com|org|lt)){1}");
 	line = std::regex_replace(line, reg, " ");
 }
-
 
 
 void getURL(string line, vector<string>& URLS) {
@@ -100,11 +82,9 @@ void getURL(string line, vector<string>& URLS) {
 	}
 }
 
+vector<string> searchURLS(int file_number) {
 
-
-vector<string> searchURLS() {
-
-	std::ifstream failas("SAMPLE.txt");
+	std::ifstream failas(std::to_string(file_number) + "_SAMPLE.txt");;
 	vector<string> URLS;
 	string line;
 	for (uint i = 0; !failas.eof(); ++i) {
@@ -116,19 +96,21 @@ vector<string> searchURLS() {
 }
 
 
+MAPw readFile(Console_& console, int file_number) {
 
 
-MAPw readFile(char get_url = 'n') {
-
-
-	std::ifstream failas("SAMPLE.txt");
+	std::ifstream failas(std::to_string(file_number)+"_SAMPLE.txt");
+	
+	if (failas.fail()) throw std::runtime_error("Nera tokio failo."); //jei nera failo
+	cout << "\nFILE " << std::to_string(file_number) + "_SAMPLE.txt" << " contents:\n\n";
+	cout << std::string(55, '=') << endl;
 	//failas.imbue(std::locale("Lithuanian"));
 	MAPw wordDict;
 	string line;
 	for (uint i = 0; !failas.eof(); ++i) {
 		std::getline(failas, line, '\n');
 		//cout << line << endl;
-		if (get_url == 'y') removeURLS(line);
+		if (console.is_confirmed()) removeURLS(line);
 		cleanString(line);
 		
 		std::stringstream ss(line);
@@ -145,24 +127,4 @@ MAPw readFile(char get_url = 'n') {
 		line.clear();
 	}
 	return wordDict;
-}
-
-
-template <typename T> T cin_and_checkFormat_in_interval(double a, double b) {
-	T input;
-	while (!(cin >> input) || a > input || input > b) {
-		std::cout << "Netinkamas ivesties formatas. Iveskite is naujo: " << endl;
-		cin.clear();
-		cin.ignore(1000, '\n');
-	}
-	return input;
-}
-
-
-
-void Console(int& kartai, char& url) {
-	cout << "Kiek kartu norite, kad zodis pasikartotu tekste?(1-100)" << endl;
-	kartai = cin_and_checkFormat_in_interval<int>(1, 100);
-	cout << "Ar norite, isgauti visus URL link'us?(y/n)" << endl;
-	std::cin >> url;
 }
