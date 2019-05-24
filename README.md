@@ -24,6 +24,8 @@ cd bin
 ((http|https):\\/\\/)?(?=\4)(www\\.)?(\w+\\.(com|org|lt)){1}
 ```
 
+---
+
 ## 1_SAMPLE text:
 I AM A! LOLAAAAAAAALL? ?azuolas god
 I{}[] AM,.,.,.,,,,}| GOD:::::: GOD; GOD
