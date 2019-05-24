@@ -1,14 +1,19 @@
-﻿In most languages that use the Latin alphabet,
-and in the International Phonetic Alphabet, ⟨d⟩
-generally represents the voiced alveolar or 
-voiced dental plosive /d/. However, in the Vietnamese 
-alphabet, it represents the sound /z/ in
-northern dialects or /j/ in southern dialects.
-(See D with stroke and Dz (digraph).) In Fijian 
-it represents a prenasalized stop /nd/.[2] In
-some languages where voiceless unaspirated
-stops contrast with https://www.dadsad.comvoiceless aspirated stops,
-⟨d⟩ represents an unaspirated /t/, while ⟨t⟩ 
-represents an aspirated /tʰ/. Examples of such
-languages include Icelandic, Scottish Gaelic, Navajo and 
-the Pinyin transliteration of Mandarin.
+﻿Permalinks are URLs that are intended
+to remain unchanged for many years into
+the future, yielding hyperlink that are
+less susceptible to link rot. Permalinks 
+are often rendered simply, that is, as 
+friendly URLs, so as to be easy for 
+people to type and remember. Permalinks 
+are used in order to point and redirect readers to 
+the same Web page, https://jeborin.orgblog post or any online digital media[8].
+
+The scientific literature www.ok.comis a place where 
+link persistence is crucial to the public 
+knowledge. A 2013 study.lt in BMC Bioinformatics 
+analyzed 15,000 links in abstracts from Thomson 
+Reuters’ Web of https://www.l.comScience citation index, founding
+that the median lifespan of Web pages was 9.3 years,
+and just 62% were archived.[9] The median lifespan 
+of a Web page constitutes high-degree variable,
+but its order of magnitude usually is of some months.[10]
