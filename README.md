@@ -21,7 +21,7 @@ cd bin
 ---
 ## Regular Expression code:
 ```Regex
-((http|https):\/{2})?(?=\4)(www\.)?(\w+\.(com|org|lt)){1}
+((http|https):\\/\\/)?(?=\4)(www\\.)?(\w+\\.(com|org|lt)){1}
 ```
 
 ## Sample text:
