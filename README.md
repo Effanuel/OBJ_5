@@ -1,6 +1,6 @@
 # OBJ_5
 1. Išveda kiek kiekvienas žodis pasikartoja kartų tekste ir kuriose eilutėse *(indeksai nuo 1)*;
-2. Suranda visus URL adresus naudojant regex ir išveda į konsolę
+2. Suranda visus URL adresus naudojant regex ir išveda į konsolę *(raidės URL neskaitomi kaip ž0džiai jei pasirinkta)*
 ---
 ## Prerequisites
 1. GNU C++ Compiler
