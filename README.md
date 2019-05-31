@@ -1,12 +1,12 @@
 # OBJ_5
 1. Išveda kiek kiekvienas žodis pasikartoja kartų tekste ir kuriose eilutėse *(indeksai nuo 1)*;
-2. Suranda visus URL adresus naudojant regex ir išveda į konsolę
+2. Suranda visus URL adresus naudojant regex ir išveda į konsolę *(raidės URL neskaitomi kaip ž0džiai jei pasirinkta)*
 ---
 ## Prerequisites
 1. GNU C++ Compiler
 
 ## Installation
-1. [Atsisiūskite naujausią versiją.]()
+1. [Atsisiūskite naujausią versiją.](https://github.com/Effanuel/OBJ_5/releases/tag/v1.0)
 2. Extract failus.
 3. Per command-line:
 ```
@@ -23,6 +23,8 @@ cd bin
 ```Regex
 ((http|https):\\/\\/)?(?=\4)(www\\.)?(\w+\\.(com|org|lt)){1}
 ```
+
+---
 
 ## 1_SAMPLE text:
 I AM A! LOLAAAAAAAALL? ?azuolas god
