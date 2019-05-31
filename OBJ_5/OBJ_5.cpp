@@ -1,4 +1,4 @@
-﻿#include "functions.h"
+#include "functions.h"
 
 int main()
 {
@@ -33,7 +33,7 @@ int main()
 		{
 			if (x.second.size() >= console.get_input()) {
 				empty = false;
-				failas << "Žodis |" << x.first + " \t" << "| buvo pakartotas " << x.second.size() << " kartus(-u) eilutese:\n";
+				failas << "�odis |" << x.first + " \t" << "| buvo pakartotas " << x.second.size() << " kartus(-u) eilutese:\n";
 				std::cout <<"Zodis |"<< x.first+" \t" << "| buvo pakartotas " << x.second.size() << " kartus(-u) eilutese: ";
 				for (const auto& a : x.second) {
 					cout << a << " ";                                            
