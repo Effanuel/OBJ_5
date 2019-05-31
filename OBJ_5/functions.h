@@ -55,20 +55,21 @@ void incrementMap(MAPw & wordDict, string & word, uint & index) {
 }
 
 void cleanString(string& line) {
-	std::vector<char> characters{ '/', '%', '[', ']', '—','-',',', '.', '?', '!', ':', ';', '"', '„', '“', '…', '(', ')', '\\', '\'', '{', '}', '*', '#' };
+	//std::vector<char> characters{ '/', '%', '[', ']', '-',',', '.', '?', '!', ':', ';', '(', ')', '\\', '\'', '{', '}', '*', '#' };
+	//for (auto& str : line)
+	//{
+	//	for (auto& ch : characters)
+	//	{
+	//		if (str == ch)
+	//		{
+	//			str = ' ';
+	//		}
+	//	}
+	//}
 	std::transform(line.begin(), line.end(), line.begin(), ::tolower);
-	//std::regex reg("[\\u0080-\\uDB7F]");// [^ \\waceeišuuž] ");
-	//line = std::regex_replace(line, reg, " ");
-	for (auto& str : line)
-	{
-		for (auto& ch : characters)
-		{
-			if (str == ch)
-			{
-				str = ' ';
-			}
-		}
-	}
+	std::regex reg("\\W");
+	line = std::regex_replace(line, reg, " ");
+
 }
 
 void removeURLS(string& line) {

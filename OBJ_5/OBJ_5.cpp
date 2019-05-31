@@ -2,8 +2,8 @@
 
 int main()
 {
-	std::locale::global(std::locale("Lithuanian"));
-	std::setlocale(LC_ALL, "Lithuanian");
+	//std::locale::global(std::locale("Lithuanian"));
+	//std::setlocale(LC_ALL, "Lithuanian");
 	Console_ console{};
 
 	console.setInterval(1, 3);
@@ -13,7 +13,7 @@ int main()
 	file_number = console.get_input();
 
 	console.setInterval(1, 100);
-	console.cin_number_in_interval("Kiek kartu norite, kad zodis pasikartotu tekste?");
+	console.cin_number_in_interval("Kiek maziausiai kartu turi zodius pasikartoti tekste?");
 	console.confirmation("Ar norite, isgauti visus URL link'us?");
 	
 
@@ -24,16 +24,13 @@ int main()
 		if (it->second.size() == 0) throw std::runtime_error("Teksto failas yra tuscias");
 		bool empty = true;
 		//std::ofstream failas;
-		std::ofstream failas;
-		failas.imbue(std::locale(std::locale::empty(), new std::codecvt_utf8<wchar_t, 0x10ffff, std::generate_header>));
-		failas.open(L"OUTPUT.txt");
-
+		std::ofstream failas("OUTPUT.txt");
 		//failas.open("OUTPUT.txt");
 		for(const auto& x : wordDict)
 		{
 			if (x.second.size() >= console.get_input()) {
 				empty = false;
-				failas << "Žodis |" << x.first + " \t" << "| buvo pakartotas " << x.second.size() << " kartus(-u) eilutese:\n";
+				failas << "Zodis |" << x.first + " \t" << "| buvo pakartotas " << x.second.size() << " kartus(-u) eilutese:\n";
 				std::cout <<"Zodis |"<< x.first+" \t" << "| buvo pakartotas " << x.second.size() << " kartus(-u) eilutese: ";
 				for (const auto& a : x.second) {
 					cout << a << " ";                                            
