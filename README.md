@@ -6,7 +6,7 @@
 1. GNU C++ Compiler
 
 ## Installation
-1. [Atsisiūskite naujausią versiją.](https://github.com/Effanuel/OBJ_5/releases/tag/v1.0)
+1. [Atsisiūskite naujausią versiją.](https://github.com/Effanuel/OBJ_5/archive/v1.1.zip)
 2. Extract failus.
 3. Per command-line:
 ```
