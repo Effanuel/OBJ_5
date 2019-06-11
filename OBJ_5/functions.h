@@ -46,10 +46,11 @@ void incrementMap(MAPw & wordDict, string & word, uint & index) {
 	MAPw::iterator it = wordDict.begin();
 	while (it != wordDict.end())
 	{
-		if (it->first == word) {
+		if (it->first == word && !std::count(it->second.begin(), it->second.end(), index+1)) { // egzamino
 			it->second.push_back(index + 1);
 			break;
 		}
+		
 		++it;
 	}
 }
@@ -132,7 +133,7 @@ MAPw readFile(Console_& console, int file_number) {
 		string word;
 		while (ss >> word) {
 			if (!wordInDict(wordDict, word)) {
-				vector<uint> init{ 1 };
+				vector<uint> init{ 0 };
 				wordDict.insert(MAPw::value_type(word, init));
 			}
 			else {

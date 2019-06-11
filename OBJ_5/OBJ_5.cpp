@@ -13,7 +13,7 @@ int main()
 	file_number = console.get_input();
 
 	console.setInterval(1, 100);
-	console.cin_number_in_interval("Kiek maziausiai kartu turi zodius pasikartoti tekste?");
+	//console.cin_number_in_interval("Kiek maziausiai kartu turi zodius pasikartoti tekste?");
 	console.confirmation("Ar norite, isgauti visus URL link'us?");
 	
 
@@ -25,29 +25,41 @@ int main()
 		bool empty = true;
 		//std::ofstream failas;
 		std::ofstream failas("OUTPUT.txt");
-		//failas.open("OUTPUT.txt");
-		for(const auto& x : wordDict)
-		{
-			if (x.second.size() >= console.get_input()) {
-				empty = false;
-				failas << "Zodis |" << x.first + " \t" << "| buvo pakartotas " << x.second.size() << " kartus(-u) eilutese:\n";
-				std::cout <<"Zodis |"<< x.first+" \t" << "| buvo pakartotas " << x.second.size() << " kartus(-u) eilutese: ";
-				for (const auto& a : x.second) {
-					cout << a << " ";                                            
-				}
-				cout << endl;
+
+		int maxWordLimit = 0;
+		for (const auto& m : wordDict) { // surasti koks yra max zodzio pasikartojimas
+			if (m.second.size() > maxWordLimit) {
+				maxWordLimit = m.second.size();
 			}
 		}
+		for (int a = 2; a <= maxWordLimit; ++a) {
+			for (const auto& x : wordDict)
+			{
+				//cout << x.first << x.second.size() << endl;
+				if (x.second.size() == a) {
+					empty = false;
+					failas << "Zodis |" << x.first + " \t\t\t" << "| buvo pakartotas " << x.second.size() << " kartus(-u) eilutese: ";
+					std::cout << "Zodis |" << x.first + " \t\t\t" << "| buvo pakartotas " << x.second.size() << " kartus(-u) eilutese: ";
+					for (const auto& a : x.second) {
+						failas << a << " ";
+						cout << a << " ";
+					}
+					failas << "\n";
+					cout << endl;
+				}
+			}
+		}
+		
 		if (empty) {
-			cout << std::string(55, '=') << endl;
+			cout << std::string(60, '=') << endl;
 			cout << "Nerasta tokiu zodziu." << endl;
 		}
 
 		if(console.is_confirmed()) {
 
-			cout << std::string(55, '=') << endl;
+			cout << std::string(60, '=') << endl;
 			cout << "\t\tURLS:" << endl;
-			cout << std::string(55, '=') << endl;
+			cout << std::string(60, '=') << endl;
 
 			vector<string> URLS = searchURLS(file_number);
 			if (URLS.empty()) {
