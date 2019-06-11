@@ -27,7 +27,8 @@ int main()
 		std::ofstream failas("OUTPUT.txt");
 
 		int maxWordLimit = 0;
-		for (const auto& m : wordDict) { // surasti koks yra max zodzio pasikartojimas
+		for (auto& m : wordDict) { // surasti koks yra max zodzio pasikartojimas
+			m.second.erase(m.second.begin());
 			if (m.second.size() > maxWordLimit) {
 				maxWordLimit = m.second.size();
 			}

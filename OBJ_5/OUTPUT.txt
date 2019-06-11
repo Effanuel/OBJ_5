@@ -1,4 +1,4 @@
-Zodis |qwe 			| buvo pakartotas 3 kartus(-u) eilutese: 0 7 11 
-Zodis |ttt 			| buvo pakartotas 3 kartus(-u) eilutese: 0 1 2 
-Zodis |cd 			| buvo pakartotas 4 kartus(-u) eilutese: 0 3 4 5 
-Zodis |rrr 			| buvo pakartotas 4 kartus(-u) eilutese: 0 8 9 10 
+Zodis |qwe 			| buvo pakartotas 2 kartus(-u) eilutese: 7 11 
+Zodis |ttt 			| buvo pakartotas 2 kartus(-u) eilutese: 1 2 
+Zodis |cd 			| buvo pakartotas 3 kartus(-u) eilutese: 3 4 5 
+Zodis |rrr 			| buvo pakartotas 3 kartus(-u) eilutese: 8 9 10 
